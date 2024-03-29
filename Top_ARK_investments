@@ -78,7 +78,7 @@ WITH a AS (
 SELECT DISTINCT
   a.ticker,
   SUM(a.shares) AS tot_shar,
-  SUM(a.market_value____) AS tot_mark_val,
+  ROUND(SUM(a.market_value____), 2) AS tot_mark_val,
   ROUND(SUM(a.market_value____) / SUM(a.shares), 2) AS share_price
 FROM a
 GROUP BY a.ticker
